@@ -33,10 +33,12 @@ public class HttpBinHandler {
     }
 
     public Mono<ServerResponse> getIP(ServerRequest request) {
-        return Mono.delay(randomThinkTime())
-                .then(ServerResponse
-                        .ok()
-                        .contentType(MediaType.APPLICATION_JSON_UTF8)
-                        .body(fromObject(httpBin.getIP())));
+//        return Mono.delay(randomThinkTime())
+//                .then(ServerResponse
+//                        .ok()
+//                        .contentType(MediaType.APPLICATION_JSON_UTF8)
+//                        .body(fromObject(httpBin.getIP())));
+
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON_UTF8).body(fromObject(httpBin.getIP()));
     }
 }

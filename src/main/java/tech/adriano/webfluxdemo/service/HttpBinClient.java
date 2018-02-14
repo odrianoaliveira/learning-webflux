@@ -11,9 +11,21 @@ import tech.adriano.webfluxdemo.domain.IP;
  * @author Adriano Oliveira
  */
 
-@FeignClient(name = "httbin", url = "https://httpbin.org")
-public interface HttpBinClient {
+@FeignClient(name = "httbin",
+        url = "https://httpbin.org",
+        fallback = HttpBinClientFallback.class)
+interface HttpBinClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/ip")
     IP getIP();
+
 }
+
+
+class HttpBinClientFallback implements HttpBinClient {
+    @Override
+    public IP getIP() {
+        return IP.builder().origin("0.0.0.0").build();
+    }
+}
+
