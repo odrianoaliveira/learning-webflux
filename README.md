@@ -1,1 +1,3 @@
-# learning-webflux
+# Learning Sprig WebFlux (Reactive Server Web)
+
+Switching from blocking servlet API to Non blocking reactive Web with Spring WebFlux
