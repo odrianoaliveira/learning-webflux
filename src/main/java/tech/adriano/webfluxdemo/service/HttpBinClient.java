@@ -1,5 +1,6 @@
 package tech.adriano.webfluxdemo.service;
 
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import tech.adriano.webfluxdemo.domain.IP;
@@ -10,10 +11,9 @@ import tech.adriano.webfluxdemo.domain.IP;
  * @author Adriano Oliveira
  */
 
-@FeignClient("httbin")
+@FeignClient(name = "httbin", url = "https://httpbin.org")
 public interface HttpBinClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/ip")
     IP getIP();
-
 }
