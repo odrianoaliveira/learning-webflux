@@ -1,3 +1,7 @@
+spring:
+  application:
+    name: webfluxpower
+
 feign:
   client:
     config:
