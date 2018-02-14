@@ -1,4 +1,4 @@
-# Learning Spring WebFlux (Reactive Server Web)
+# Learning Spring WebFlux (Reactive Web)
 
 Switching from blocking servlet API to Non blocking reactive Web with Spring WebFlux
 
